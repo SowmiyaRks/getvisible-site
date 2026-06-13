@@ -11,8 +11,11 @@ export default function About() {
     <main className="section">
       <div className="container" style={{ maxWidth: 800 }}>
         <h1>Built by practitioners, not just strategists</h1>
-        <p className="lead" style={{ marginTop: 20 }}>Coming soon — full about page.</p>
-        <Link href="/" className="btn btn-ghost" style={{ marginTop: 28 }}>Back to home</Link>
+        <p className="lead" style={{ marginTop: 20 }}>
+          Klimbr is a digital marketing agency built for the age of AI. We combine over six years of
+          hands-on SEO expertise with intelligent automation to help businesses rank higher and grow online.
+        </p>
+        <Link href="/" className="btn btn-primary" style={{ marginTop: 32, display: "inline-block" }}>Back to home</Link>
       </div>
     </main>
   );
