@@ -18,10 +18,21 @@ export default function ContactPage() {
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
+        headers: { Accept: "application/json" },
         body: formData,
       });
-      const data = await response.json();
-      if (data.success) {
+
+      let success = response.ok;
+      try {
+        const data = await response.json();
+        if (typeof data?.success === "boolean") {
+          success = data.success;
+        }
+      } catch {
+        // Response wasn't JSON; fall back to response.ok
+      }
+
+      if (success) {
         setResult("Thanks! We'll get back to you within 24 hours.");
         event.currentTarget.reset();
       } else {
